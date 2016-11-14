@@ -1,2 +1,2 @@
 
-export default 'Core Auth Token Here';
+export default 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU4MjlmMmM4MzdhMTNkN2Y3ZDBkMzM3ZCIsImlzcyI6Imt1YWxpLmNvIiwiZXhwIjoxNTEwNjgwMTM2LCJpYXQiOjE0NzkxNDQxMzZ9.UKLbJbu9lbHfBYqJ8qQ7YkgShU8yN8HBUV_APM9tqU8';
