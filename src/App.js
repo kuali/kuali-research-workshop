@@ -32,11 +32,20 @@ class App extends Component {
             anchorEl={this.state.anchorEl}
             onRequestClose={() => this.setState({open: false})}
           >
-          <Menu>
-            <MenuItem primaryText="Home" onClick={() => browserHistory.push('/')}/>
-            <MenuItem primaryText="Proposals" onClick={() => browserHistory.push('/proposals')}/>
-            <MenuItem primaryText="COI" onClick={() => browserHistory.push('/coi')}/>
-          </Menu>
+            <Menu>
+              <MenuItem primaryText="Home" onClick={() => {
+                browserHistory.push('/');
+                this.setState({open: false});
+              }} />
+              <MenuItem primaryText="Proposals" onClick={() => {
+                browserHistory.push('/proposals');
+                this.setState({open: false});
+              }} />
+              <MenuItem primaryText="COI" onClick={() => {
+                browserHistory.push('/coi');
+                this.setState({open: false});
+              }} />
+            </Menu>
           </Popover>
           <h1> Kuali Research REST API Workshop</h1>
           {this.props.children}

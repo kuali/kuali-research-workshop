@@ -17,7 +17,7 @@ class COI extends Component {
     this.state = {
       userId: null,
       proposal: null
-    }
+    };
 
     this.createProposal = this.createProposal.bind(this);
   }
