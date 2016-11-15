@@ -4,6 +4,9 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { grey200 } from 'material-ui/styles/colors';
 import { Popover, Menu, MenuItem, RaisedButton } from 'material-ui';
 import {browserHistory} from 'react-router';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+injectTapEventPlugin();
 
 const theme = getMuiTheme({
   raisedButton: {
@@ -32,6 +35,7 @@ class App extends Component {
           <Menu>
             <MenuItem primaryText="Home" onClick={() => browserHistory.push('/')}/>
             <MenuItem primaryText="Proposals" onClick={() => browserHistory.push('/proposals')}/>
+            <MenuItem primaryText="COI" onClick={() => browserHistory.push('/coi')}/>
           </Menu>
           </Popover>
           <h1> Kuali Research REST API Workshop</h1>
