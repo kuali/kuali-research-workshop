@@ -28,7 +28,7 @@
   - do this by appending to the url ?key=value. The key is stored in `this.state.filterBy` and the value is in `this.state.filter`
 - You can find the final version in `Proposals.final.js`
 
-
+Exercise 3: https://docs.google.com/document/d/1XOTEUX1IOjLxUBA9jKYwnSvjSh1J4SvwgtrPoePevXc/edit
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

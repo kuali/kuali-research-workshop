@@ -45,6 +45,11 @@ class App extends Component {
                 browserHistory.push('/coi');
                 this.setState({open: false});
               }} />
+              <MenuItem primaryText="Protocols" onClick={() => {
+                browserHistory.push('/protocols');
+                this.setState({open: false});
+              }} />
+
             </Menu>
           </Popover>
           <h1> Kuali Research REST API Workshop</h1>
