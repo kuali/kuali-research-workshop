@@ -21,15 +21,26 @@ class App extends Component {
   }
 
   componentDidMount() {
+    this.fetchProposals();
+    this.fetchRelatedData();
   }
 
   fetchRelatedData() {
     this.fetchData('/research-common/api/v1/proposal-types/')
       .then((data) => this.setState({proposalTypes : keyBy(data, 'code')}));
+    this.fetchData('/research-common/api/v1/activity-types/')
+      .then((data) => this.setState({activityTypes : keyBy(data, 'code')}));
+    this.fetchData('/instprop/api/v1/proposal-statuses/')
+      .then((data) => this.setState({proposalStatuses : keyBy(data, 'proposalStatusCode')}));
+    this.fetchData('/research-common/api/v1/units/')
+      .then((data) => this.setState({units : keyBy(data, 'unitNumber')}));
   }
 
   fetchProposals = () => {
     let url = '/instprop/api/v1/institutional-proposals/';
+    if (this.state.filterBy) {
+      url += `?${this.state.filterBy}=${this.state.filter}`;
+    }
     this.fetchData(url).then((data) => this.setState({proposals : data}));
   }
 
