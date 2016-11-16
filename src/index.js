@@ -5,6 +5,7 @@ import Proposals from './Proposals';
 import Awards from './Awards';
 import COI from './COI';
 import ProposalsFinal from './Proposals.final';
+import Protocols from './Protocols';
 import './index.css';
 import { Router, Route, browserHistory } from 'react-router';
 
@@ -17,6 +18,7 @@ ReactDOM.render(
     <Route path="/" component={App}>
       <Route path="proposals" component={Proposals}/>
       <Route path="proposals-final" component={ProposalsFinal}/>
+      <Route path="protocols" component={Protocols}/>
       <Route path="awards" component={Awards}/>
       <Route path="coi" component={COI} />
     </Route>
