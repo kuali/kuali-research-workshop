@@ -1,2 +1,2 @@
 
-export default 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU4MmJiNDg4Njk1ZmY1MmM5MTZkYmI1NiIsImlzcyI6Imt1YWxpLmNvIiwiZXhwIjoxNTEwNzk1MjcyLCJpYXQiOjE0NzkyNTkyNzJ9.WAFMtUiK0DmiC_elhZz2Asu1NhomvgTx0hTK46tIvOE';
+export default 'add token here';
