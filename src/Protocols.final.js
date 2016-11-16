@@ -79,6 +79,7 @@ class App extends Component {
       .then((response) => {
         if (response.ok) {
           console.log('protocol created')
+          this.handleClose();
         }
       })
   };
@@ -87,6 +88,7 @@ class App extends Component {
     const actions = [
       <RaisedButton
         label="Cancel"
+        style={{marginRight: '10px'}}
         primary={true}
         onClick={this.handleClose}
       />,
