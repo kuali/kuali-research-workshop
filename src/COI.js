@@ -139,9 +139,9 @@ class COI extends Component {
   }
 
   createAward() {
-    // call this.getAwardJson passing in the userId which has been entered
+    // call this.getAwardJson passing in this.state.userId
     // Use the authToken to POST the result to /award/api/v2/awards/
-    // Set the award property on this component's state
+    // After resolving response.json from the fetch, set the result on this component's state as award
   }
 
   getProjectJson() {
