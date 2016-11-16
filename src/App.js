@@ -49,6 +49,10 @@ class App extends Component {
                 browserHistory.push('/proposals');
                 this.setState({open: false});
               }} />
+              <MenuItem primaryText="Awards" onClick={() => {
+                browserHistory.push('/awards');
+                this.setState({open: false});
+              }} />
               <MenuItem primaryText="COI" onClick={() => {
                 browserHistory.push('/coi');
                 this.setState({open: false});

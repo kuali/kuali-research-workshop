@@ -13,7 +13,7 @@
   - `npm install`
   - `npm start`
 
-https://docs.google.com/document/d/1XOTEUX1IOjLxUBA9jKYwnSvjSh1J4SvwgtrPoePevXc/edit
+# [All Exercises](https://docs.google.com/document/d/1XOTEUX1IOjLxUBA9jKYwnSvjSh1J4SvwgtrPoePevXc)
 
 # Exercise 1 -- Institutional Proposals - Proposals.js
 
@@ -29,3 +29,15 @@ https://docs.google.com/document/d/1XOTEUX1IOjLxUBA9jKYwnSvjSh1J4SvwgtrPoePevXc/
 - Tie filtering into the proposal search so that when you click the filter button it only shows relevant results
   - do this by appending to the url ?key=value. The key is stored in `this.state.filterBy` and the value is in `this.state.filter`
 - You can find the final version in `Proposals.final.js`
+
+# Exercise 2 -- Awards - Award.js
+
+- Part 1: Fix the fetch command in the componentDidMount method so it successfully pulls in the award summaries.
+  - The url should be `/award/api/v1/awards/?summary`
+- Part 2: Enable the BarGraph
+  - Remove the false condition before the BarGraph
+  - Populate the data attribute in the bar graph by using the included function `generateAwardCountStatsBySponsor` and passing in the awards that are in the local component state.
+- Part 3: Pull down all award amount infos
+  - Perform a fetch, similar to the award summary one, but against `/award/api/v1/award-amount-infos/` and store the result in the component state.
+- Part 4: Update the BarGraph to display dollar amounts.
+ - Update the data attribute to instead use `generateAwardDollarAmountBySponsor` and pass in both the awards and the award amount infos from the state.

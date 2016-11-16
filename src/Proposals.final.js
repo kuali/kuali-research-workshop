@@ -39,8 +39,9 @@ class App extends Component {
   fetchProposals = () => {
     let url = '/instprop/api/v1/institutional-proposals/';
     if (this.state.filterBy) {
-      url += `?${this.state.filterBy}=${this.state.filter}`;
+      url = `${url}?${this.state.filterBy}=${this.state.filter}`;
     }
+    console.log(url);
     this.fetchData(url).then((data) => this.setState({proposals : data}));
   }
 
@@ -77,7 +78,7 @@ class App extends Component {
             value={this.state.filter}
             onChange={e => this.setState({filter: e.target.value})}
           />
-          <RaisedButton label='Filter' primary={true} onTouchTap={this.fetchData}/>
+          <RaisedButton label='Filter' primary={true} onTouchTap={this.fetchProposals}/>
         </div>
         <Table>
           <TableHeader>
