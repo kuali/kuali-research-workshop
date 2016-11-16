@@ -4,9 +4,6 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { grey200 } from 'material-ui/styles/colors';
 import { Popover, Menu, MenuItem, RaisedButton } from 'material-ui';
 import {browserHistory} from 'react-router';
-import injectTapEventPlugin from 'react-tap-event-plugin';
-
-injectTapEventPlugin();
 
 const theme = getMuiTheme({
   raisedButton: {
