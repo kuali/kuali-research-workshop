@@ -66,7 +66,7 @@ class App extends Component {
             value={this.state.filter}
             onChange={e => this.setState({filter: e.target.value})}
           />
-          <RaisedButton label='Filter' primary={true} onTouchTap={this.fetchProposals}/>
+          <RaisedButton label='Filter' primary={true} onClick={this.fetchProposals}/>
         </div>
         <Table>
           <TableHeader>

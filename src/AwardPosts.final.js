@@ -224,13 +224,13 @@ class App extends Component {
       <FlatButton
         label="Cancel"
         primary={true}
-        onTouchTap={this.handleClose}
+        onClick={this.handleClose}
         />,
       <FlatButton
         label="Post to Financials"
         primary={true}
         keyboardFocused={true}
-        onTouchTap={this.handleClose}
+        onClick={this.handleClose}
         />,
     ];
 
@@ -240,7 +240,7 @@ class App extends Component {
         <h3>Award Post Information</h3>
 
         <TextField value={this.state.awardId} onChange={(e) => this.setState({awardId:e.target.value})} hintText="Award id"/>
-        <RaisedButton label="Refresh" default={true} onTouchTap={() => this.fetchAwardPosts()} style={{marginTop: 20,display: "block", float:"right"}}/>
+        <RaisedButton label="Refresh" default={true} onClick={() => this.fetchAwardPosts()} style={{marginTop: 20,display: "block", float:"right"}}/>
 
         <Table  style={{marginTop: 40}}>
           <TableHeader displaySelectAll={false} enableSelectAll={false} adjustForCheckbox={false}>
@@ -267,10 +267,10 @@ class App extends Component {
                   <TableRowColumn>
                   </TableRowColumn>
                   <TableRowColumn>
-                    <RaisedButton label="Toggle Status" onTouchTap={() => this.toggleStatus(awardPost.id)}/>
+                    <RaisedButton label="Toggle Status" onClick={() => this.toggleStatus(awardPost.id)}/>
                   </TableRowColumn>
                   <TableRowColumn>
-                    <RaisedButton label="Financial Data" onTouchTap={this.handleOpen}/>
+                    <RaisedButton label="Financial Data" onClick={this.handleOpen}/>
                     <Dialog
                       title="Dialog With Actions"
                       actions={actions}
