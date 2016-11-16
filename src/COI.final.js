@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { Component } from 'react';
 import authToken, {coiAdminToken} from './auth-token';
 import {
@@ -139,10 +138,26 @@ class COI extends Component {
   }
 
   createAward() {
-    // call this.getAwardJson passing in the userId which has been entered
-    // Use the authToken to POST the result to /award/api/v2/awards/
-    // Set the award property on this component's state
+    var headers = new Headers();
+    headers.append('Authorization', `Bearer ${authToken}`);
+    headers.append('Content-Type', 'application/json');
+
+    const options = {
+      method: 'POST',
+      headers,
+      body: JSON.stringify(this.getAwardJson(this.state.userId))
+    };
+
+    fetch('/award/api/v2/awards/', options)
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          alert('error posting award');
+        }
+      }).then(award => this.setState({award}));
   }
+
 
   getProjectJson() {
     return {
@@ -174,9 +189,24 @@ class COI extends Component {
   }
 
   pushToCOI() {
-    // call this.getProjectJson
-    // Use the coiAdminToken to POST the result to /api/coi/projects/
-    // call this.showNextStep after the response has been received.
+    var headers = new Headers();
+    headers.append('Authorization', `Bearer ${coiAdminToken}`);
+    headers.append('Content-Type', 'application/json');
+
+    const options = {
+      method: 'POST',
+      headers,
+      body: JSON.stringify(this.getProjectJson())
+    };
+
+    fetch('/api/coi/projects/', options)
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          alert('Error pushing project');
+        }
+      }).then(this.showNextStep);
   }
 
   showNextStep() {
@@ -194,7 +224,7 @@ class COI extends Component {
         if (response.ok) {
           return response.json();
         } else {
-          alert('Error looking up username for user id');
+          alert('Error looking up project details');
         }
       }).then(data => {
         this.setState({
