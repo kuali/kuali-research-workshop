@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import Proposals from './Proposals';
 import Awards from './Awards';
+import AwardPosts from './AwardPosts';
 import COI from './COI';
 import ProposalsFinal from './Proposals.final';
 import Protocols from './Protocols';
@@ -20,6 +21,7 @@ ReactDOM.render(
       <Route path="proposals-final" component={ProposalsFinal}/>
       <Route path="protocols" component={Protocols}/>
       <Route path="awards" component={Awards}/>
+      <Route path="award-posts" component={AwardPosts}/>
       <Route path="coi" component={COI} />
     </Route>
     <Route path="*" component={NoMatch}/>
