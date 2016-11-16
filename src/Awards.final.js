@@ -17,8 +17,7 @@ class App extends Component {
       method: 'GET',
       headers
     };
-    //part 1
-    fetch('award summary url here', init)
+    fetch('/award/api/v1/awards/?summary', init)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -28,20 +27,28 @@ class App extends Component {
       }).then((data) => {
           this.setState({awards: data.awards});
       });
-      //part 3
+      fetch('/award/api/v1/award-amount-infos/', init)
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            console.log('error fetching award infos');
+          }
+        }).then((data) => {
+          this.setState({awardAmountInfos: data});
+        });
   }
 
   render() {
     return (
       <div>
-        //part 2 & 4
-        {false && this.state.awards.length > 0 &&
+        {this.state.awards.length > 0 &&
         <BarChart
-          data={{}}
+          data={generateAwardDollarAmountBySponsor(this.state.awards, this.state.awardAmountInfos)}
           width={1200}
           height={500}
           fill={'#3182bd'}
-          title='Awards By Sponsor'/>}
+          title='Bar Chart'/>}
         <Table>
           <TableHeader>
             <TableRow>
